@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import BackButton from "../../components/common/BackButton";
 
 const DinoGame = () => {
-  const navigate = useNavigate();
   const gameAreaRef = useRef(null);
   const dinoRef = useRef(null);
   const [gameState, setGameState] = useState("ready");

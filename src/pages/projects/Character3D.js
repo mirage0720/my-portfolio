@@ -368,7 +368,9 @@ const Character3D = () => {
   }, []);
 
   useEffect(() => {
-    if (!mountRef.current) return;
+    // ✅ mountRef.current를 변수에 저장 (ESLint 경고 해결)
+    const currentMount = mountRef.current;
+    if (!currentMount) return;
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xe0a060);
@@ -400,7 +402,7 @@ const Character3D = () => {
     renderer.domElement.style.zIndex = "0";
     rendererRef.current = renderer;
 
-    mountRef.current.appendChild(renderer.domElement);
+    currentMount.appendChild(renderer.domElement);
 
     const ambientLight = new THREE.AmbientLight(0x404040, 0.9);
     scene.add(ambientLight);
@@ -519,6 +521,7 @@ const Character3D = () => {
       setShowInstructions(false);
     }, 8000);
 
+    // ✅ cleanup 함수에서 currentMount 변수 사용 (ESLint 경고 해결)
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
@@ -529,11 +532,11 @@ const Character3D = () => {
         cancelAnimationFrame(animationRef.current);
       }
       if (
-        mountRef.current &&
+        currentMount &&
         renderer.domElement &&
-        mountRef.current.contains(renderer.domElement)
+        currentMount.contains(renderer.domElement)
       ) {
-        mountRef.current.removeChild(renderer.domElement);
+        currentMount.removeChild(renderer.domElement);
       }
       renderer.dispose();
     };
