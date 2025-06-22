@@ -23,7 +23,7 @@ const HeroSection = () => {
           as="h2"
           className="text-2xl md:text-3xl text-gray-300"
         >
-          저는 프론트엔드 개발자입니다
+          저는 프론트엔드 개발자 유동원 입니다
         </TextAnimation>
 
         <TextAnimation
