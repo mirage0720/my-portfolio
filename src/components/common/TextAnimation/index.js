@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 // 애니메이션 프리셋 정의
@@ -73,8 +73,8 @@ const TextAnimation = ({
   const controls = useAnimation();
   const [textParts, setTextParts] = useState([]);
 
-  // 자식 요소에서 텍스트 추출
-  const extractText = (element) => {
+  // useCallback으로 extractText 정의
+  const extractText = useCallback((element) => {
     if (typeof element === "string") {
       return element;
     }
@@ -87,13 +87,13 @@ const TextAnimation = ({
       return element.map(extractText).join("");
     }
     return "";
-  };
+  }, []);
 
   useEffect(() => {
     const text = extractText(children);
     const parts = splitText(text, unit);
     setTextParts(parts);
-  }, [children, unit]);
+  }, [children, unit, extractText]);
 
   useEffect(() => {
     if (trigger && isInView) {
