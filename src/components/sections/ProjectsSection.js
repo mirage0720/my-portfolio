@@ -36,18 +36,24 @@ const ProjectsSection = () => {
   const otherProjects = [
     {
       id: 4,
+      title: "영단어 학습 플랫폼 VOCADO",
+      path: "/projects/vocabulary-platform",
+      tag: "(주)천재교육/개인개발",
+    },
+    {
+      id: 5,
       title: "AI 챗봇 개발",
       path: "/projects/ai-chatbot",
       tag: "(주)천재교육",
     },
     {
-      id: 5,
+      id: 6,
       title: "반응형 웹사이트 제작",
       path: "/projects/responsive-site",
       tag: "알고소프트",
     },
     {
-      id: 6,
+      id: 7,
       title: "Unity 활용 3D 게임 제작",
       path: "/projects/unity-game",
       tag: "개인 프로젝트",
@@ -189,6 +195,82 @@ const ProjectsSection = () => {
                   {proj.tag}
                 </span>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 프로젝트 통계 */}
+        <div className="mt-16 bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-8">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-white mb-2">
+              프로젝트 요약
+            </h3>
+            <p className="text-gray-300">다양한 분야에서의 개발 경험</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="bg-gray-900/50 rounded-lg p-4">
+              <div className="text-3xl font-bold text-blue-400 mb-1">
+                {projects.length + otherProjects.length}
+              </div>
+              <div className="text-sm text-gray-300">총 프로젝트</div>
+            </div>
+
+            <div className="bg-gray-900/50 rounded-lg p-4">
+              <div className="text-3xl font-bold text-green-400 mb-1">
+                {otherProjects.filter((p) => p.tag.includes("개인")).length +
+                  projects.filter((p) => p.tag.includes("개인")).length}
+              </div>
+              <div className="text-sm text-gray-300">개인 프로젝트</div>
+            </div>
+
+            <div className="bg-gray-900/50 rounded-lg p-4">
+              <div className="text-3xl font-bold text-purple-400 mb-1">
+                {otherProjects.filter((p) => !p.tag.includes("개인")).length}
+              </div>
+              <div className="text-sm text-gray-300">협업 프로젝트</div>
+            </div>
+
+            <div className="bg-gray-900/50 rounded-lg p-4">
+              <div className="text-3xl font-bold text-yellow-400 mb-1">
+                {
+                  new Set([
+                    ...projects.flatMap((p) => p.technologies),
+                    "Django",
+                    "Unity",
+                    "Chart.js",
+                    "Socket.io",
+                    "Figma",
+                  ]).size
+                }
+              </div>
+              <div className="text-sm text-gray-300">사용 기술</div>
+            </div>
+          </div>
+        </div>
+
+        {/* 기술 스택 요약 */}
+        <div className="mt-12 text-center">
+          <h3 className="text-xl font-bold text-white mb-6">주요 기술 스택</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { name: "React", color: "bg-blue-600" },
+              { name: "Django", color: "bg-green-600" },
+              { name: "Three.js", color: "bg-green-500" },
+              { name: "Unity", color: "bg-gray-600" },
+              { name: "JavaScript", color: "bg-yellow-600" },
+              { name: "Python", color: "bg-blue-500" },
+              { name: "Canvas API", color: "bg-purple-600" },
+              { name: "REST API", color: "bg-orange-600" },
+              { name: "Tailwind CSS", color: "bg-cyan-600" },
+              { name: "Git", color: "bg-red-600" },
+            ].map((tech, index) => (
+              <span
+                key={index}
+                className={`${tech.color} text-white px-4 py-2 rounded-full text-sm font-medium hover:scale-110 transition-transform cursor-default`}
+              >
+                {tech.name}
+              </span>
             ))}
           </div>
         </div>

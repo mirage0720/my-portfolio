@@ -9,6 +9,9 @@ import Character3D from "./pages/projects/Character3D";
 import DinoGame from "./pages/projects/DinoGame";
 import ChatMessenger from "./pages/projects/ChatMessenger";
 
+// 🔥 새로 추가: 영단어 학습 플랫폼
+import VocabularyPlatform from "./pages/projects/VocabularyPlatform";
+
 import AIChatbot from "./pages/projects/AIChatbot";
 import ResponsiveSite from "./pages/projects/ResponsiveSite";
 import UnityGame from "./pages/projects/UnityGame";
@@ -29,6 +32,13 @@ function App() {
           <Route path="/projects/3d-character" element={<Character3D />} />
           <Route path="/projects/chat-messenger" element={<ChatMessenger />} />
           <Route path="/projects/dino-game" element={<DinoGame />} />
+
+          {/* 🔥 새로 추가: 영단어 학습 플랫폼 라우트 */}
+          <Route
+            path="/projects/vocabulary-platform"
+            element={<VocabularyPlatform />}
+          />
+
           <Route path="/projects/ai-chatbot" element={<AIChatbot />} />
           <Route
             path="/projects/responsive-site"
