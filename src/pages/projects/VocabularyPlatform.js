@@ -251,16 +251,16 @@ const VocabularyLearningPlatform = () => (
 
       {/* 프로젝트 링크 */}
       <section>
-        <h2 className="text-2xl font-semibold mb-4 text-cyan-400">
-          🔗 프로젝트 바로가기
-        </h2>
-        <div className="flex flex-wrap gap-4">
+        <h2 className="text-2xl font-semibold mb-4">프로젝트 바로가기</h2>
+        <div className="flex flex-row gap-4">
+          {/* Github 버튼 */}
           <a
             href="https://github.com/mirage0720?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-105"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition"
           >
+            {/* Github SVG */}
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path
                 fillRule="evenodd"
@@ -268,31 +268,16 @@ const VocabularyLearningPlatform = () => (
                 clipRule="evenodd"
               />
             </svg>
-            <span>Frontend Repository</span>
+            <span>GitHub</span>
           </a>
-
-          <a
-            href="https://github.com/mirage0720?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-green-700 rounded-lg hover:bg-green-600 transition-all transform hover:scale-105"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                fillRule="evenodd"
-                d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.87 10.89.58.1.79-.25.79-.56v-2.03c-3.2.7-3.87-1.54-3.87-1.54-.53-1.35-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.17.08 1.8 1.2 1.8 1.2 1.04 1.8 2.74 1.28 3.41.98.11-.75.41-1.28.75-1.58-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.44.11-3 0 0 .98-.31 3.21 1.18A11.07 11.07 0 0 1 12 6.84c.99.01 1.99.13 2.93.39 2.22-1.49 3.2-1.18 3.2-1.18.63 1.56.23 2.71.11 3 .74.8 1.18 1.83 1.18 3.09 0 4.43-2.71 5.41-5.28 5.7.42.37.8 1.1.8 2.22v3.29c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.87 18.13.5 12 .5Z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>Backend Repository</span>
-          </a>
-
+          {/* Notion 버튼 */}
           <a
             href="https://www.notion.so/301fbf65f350476391bc88eeed8192c9?v=49a034076ee34b71bf84727f8be36c0f"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 rounded-lg hover:bg-blue-600 transition-all transform hover:scale-105"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition"
           >
+            {/* Notion SVG */}
             <svg className="w-5 h-5" viewBox="0 0 32 32" fill="none">
               <rect x="4" y="4" width="24" height="24" rx="5" fill="white" />
               <path
@@ -301,7 +286,7 @@ const VocabularyLearningPlatform = () => (
                 strokeWidth="1.5"
               />
             </svg>
-            <span>프로젝트 문서</span>
+            <span>Notion</span>
           </a>
         </div>
       </section>
