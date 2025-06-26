@@ -209,8 +209,8 @@ const VocabularyLearningPlatform = () => (
               <strong>문제:</strong> 퀴즈 결과와 보카맵 상태 간의 실시간 동기화
             </p>
             <p className="text-gray-300">
-              <strong>해결:</strong> 통합 API 설계로 단일 진실 공급원(Single
-              Source of Truth) 구현
+              <strong>해결:</strong> 통합 보카맵 API 설계로 학습 진도와 캔버스
+              상태 간 실시간 동기화 구현
             </p>
           </div>
         </div>
