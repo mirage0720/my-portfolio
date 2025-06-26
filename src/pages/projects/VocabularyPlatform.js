@@ -272,7 +272,7 @@ const VocabularyLearningPlatform = () => (
           </a>
           {/* Notion 버튼 */}
           <a
-            href="https://www.notion.so/301fbf65f350476391bc88eeed8192c9?v=49a034076ee34b71bf84727f8be36c0f"
+            href="https://www.notion.so/DongWon-You-Developer-cbd5cffc078447f3aff29ebb2c725dc4?p=21e9dd35450281d2b99ce6b7f077ee50&pm=c"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition"
